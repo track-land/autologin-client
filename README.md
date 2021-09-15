@@ -25,7 +25,7 @@ Receive the email and return the url to autologin
 curl --location -g --request POST 'https://api.trackland.srv.br/v1/autologin' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {{appToken}}' \
---data-raw '{ "user": { "email": "teste@example.com" ,"username": "usertest" }}'
+--data-raw '{ "email": "teste@example.com" }'
 ```
 
 ### Example Response - 201
@@ -34,8 +34,8 @@ Returns a json with token, username, email and url
 
 ```json
 {
-  "token": "2b73b6fa-ccea-4928-81c7-76d8f76513e0",
-  "url": "https://app.trackland.srv.br/autologin/2b73b6fa-ccea-4928-81c7-76d8f76513e0",
+  "token": "2b73b6fccea4928",
+  "url": "https://tauruscard.iterwelkom.com/login-by-token/2b73b6fccea4928",
   "username": "usertest",
   "email": "teste@example.com"
 }

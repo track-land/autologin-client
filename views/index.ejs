@@ -6,8 +6,18 @@
   </head>
   <body>
     <h1>Track Land Autologin</h1>
-    <p>Welcome to Autologin for <b><%= email %></b></p>
+    
+    <form action="/" method="get">
+      <label for="email">E-mail:</label><br>
+      <input type="text" id="email" name="email" value="<%= email %>" />
+      <input type="submit" value="Submit">
+    </form>
 
-    <iframe src="<%= url %>" width="100%" height="800px" />
+    <% if (url) { %>
+      <p>Welcome to Autologin for <b><%= email %></b></p>
+      <iframe src="<%= url %>" width="100%" height="800px" />
+    <% } else { %>
+        <p><b><%= error %></b></p>
+    <% } %>
   </body>
 </html>
